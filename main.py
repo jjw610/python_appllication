@@ -31,6 +31,7 @@ def checkDocument():#xml파일이 파싱됬는지 확인하는 함수
     return True
 
 def main():
+<<<<<<< HEAD
     global xmlFile
     LoadingXml()
     PrintXml()
@@ -72,3 +73,8 @@ def PrintXml():
 
 
 main()
+=======
+    a=0
+    b=0
+    c=1
+>>>>>>> refs/remotes/origin/master
