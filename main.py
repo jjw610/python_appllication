@@ -10,28 +10,31 @@ xmlFile = None
 root=None
 def LoadingXml():
     address = str(input("파일 경로 입력: "))
-    #C:\Users\didxo\Desktop\pollution.xml
+    #C:\Users\원종주\Desktop\GitHub 사용처\pollution.xml
+    #C:\Users\원종주\Desktop\GitHub 사용처\every bik.xml
+    #C:\Users\원종주\Desktop\GitHub 사용처\bcycl-dpstry-std.xml
+
     global xmlFile,root
     try:
         xmlFile = ET.parse(address)
     except IOError:
-        print("IOError")
+        print("파일을 못 찾았뜸")
     else:
         try:
             root = xmlFile.getroot()
         except Exception:
-            print("loading fail")
+            print("로딩에서 오류가 났뜸")
     return None
 
 def checkDocument():#xml파일이 파싱됬는지 확인하는 함수
     global xmlFile
     if xmlFile == None:
-        print("Error : Document is empty")
+        print("파싱이 안됬뜸")
         return False
     return True
 
 def main():
-<<<<<<< HEAD
+
     global xmlFile
     LoadingXml()
     PrintXml()
@@ -60,21 +63,13 @@ def PrintXml():
     if(not checkDocument()):
         print("xmlFile is None")
         return None
-    items = root.findall("row")
+    items = root.findall("list")
     print(items)
     for data in items:
         for item in data.iter():
-            if item.tag=="MSRDT":
-                continue
-            print(item.text,end=" ")
-
-
-
+            if item.tag=="string":
+                print(items)
 
 
 main()
-=======
-    a=0
-    b=0
-    c=1
->>>>>>> refs/remotes/origin/master
+
